@@ -56,7 +56,6 @@ function initGame() {
     MiddleSection.innerHTML += `
     <article id="suitcase${index}" onclick="Choose(this)">
     <p>${index}</p>
-    <h5 id="money${index}"></h5>
     </article>
     `
     LeftSection.innerHTML += `<h6>${index}</h6>`
@@ -70,34 +69,34 @@ for (let index = 0; index < money.length; index++) {
 }
 shuffle(money)
 setTimeout(() => {
-  alert("Vælg din kuffert")  
+  document.querySelectorAll('h1')[0].innerText = "Vælg din kuffert"
 }, 300);
 
 }
 
 function bank() {
-    let howManyGold = 0
+    let howManygray = 0
     let calc = 0
                         
                         for (let index = 0; index < document.querySelectorAll('h2').length; index++) {
                             const element = document.querySelectorAll('h2')[index];
-                            if (element.style.backgroundColor !== "gold") {
+                            if (element.style.backgroundColor !== "gray") {
                                
                                calc = parseInt(element.innerText) + calc
-                                                        howManyGold++
+                                                        howManygray++
                                                         
                                 
                             }
                             
                         }
                         
-                        howManyGold = howManyGold/2
-                        console.log("bank = " + calc/howManyGold);
+                        howManygray = howManygray/2
+                        console.log("bank = " + calc/howManygray);
                         btn.click()
                         modalContent.innerHTML = ""
                         modalContent.innerHTML = `
                         <h3>Banken vil købe din kuffert for:</h3>
-                        <h4>${parseInt(calc/howManyGold)} Kr</h4>
+                        <h4>${parseInt(calc/howManygray)} Kr</h4>
                         <button type="button" onclick="dontSell()">Sælg ikke</button>
                         <button type="button" onclick="Sell()">Sælg</button>
                         `
@@ -127,27 +126,27 @@ function bank() {
 
 function Choose(obj) {
     
-if (obj.children[1].innerText === "") {
+if (!obj.children[0].innerText.includes("Kr") && obj.children[0].innerText != PlayerSuitcase) {
     click--
 }
     console.log(click);
     if (PlayerSuitcase === 0) {
         PlayerSuitcase = parseInt(obj.id.substring(8))
         document.querySelectorAll('h6')[PlayerSuitcase - 1].style.backgroundColor = "green"
-        document.querySelector(`#money${PlayerSuitcase}`).innerText = "*"
+        document.querySelectorAll('h1')[0].innerText = ""
 
     }else{
         console.log(money[PlayerSuitcase]);
         if (parseInt(obj.id.substring(8)) !== PlayerSuitcase) {
-            if (document.getElementById(`money${obj.id.substring(8)}`).innerText === "") {
-                document.getElementById(`money${obj.id.substring(8)}`).innerText = `${money[parseInt(obj.id.substring(8))]}`
+            if (!obj.children[0].innerText.includes("Kr")) {
+                obj.children[0].innerText = `${money[parseInt(obj.id.substring(8))]} Kr`
             for (let index = 0; index < document.querySelectorAll('h2').length; index++) {
                 const element = document.querySelectorAll('h2')[index];
                 if (element.innerText == money[parseInt(obj.id.substring(8))]) {
-                    element.style.backgroundColor = "gold"
-                    document.querySelectorAll('h6')[parseInt(obj.id.substring(8)) - 1].style.backgroundColor = "gold"
+                    element.style.backgroundColor = "gray"
+                    document.querySelectorAll('h6')[parseInt(obj.id.substring(8)) - 1].style.backgroundColor = "gray"
                     
-                    if (count < 2) {
+                    if (count < 4) {
                      count++   
                     }else{
                         setTimeout(() => {
