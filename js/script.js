@@ -118,6 +118,7 @@ function bank() {
                             modalContent.innerHTML = `
                             <h3>Du vandt</h3>
                             <h4>${amount}</h4>
+                            <p>Din egen kuffert indeholdte ${money[PlayerSuitcase]} Kr</p>
         <button onclick="location.reload()">Nyt spil?</button>
                             `
                         }, 100);
@@ -133,7 +134,7 @@ if (obj.children[1].innerText === "") {
     if (PlayerSuitcase === 0) {
         PlayerSuitcase = parseInt(obj.id.substring(8))
         document.querySelectorAll('h6')[PlayerSuitcase - 1].style.backgroundColor = "green"
-        document.querySelector(`#money${PlayerSuitcase}`).innerText = "."
+        document.querySelector(`#money${PlayerSuitcase}`).innerText = "*"
 
     }else{
         console.log(money[PlayerSuitcase]);
@@ -145,6 +146,7 @@ if (obj.children[1].innerText === "") {
                 if (element.innerText == money[parseInt(obj.id.substring(8))]) {
                     element.style.backgroundColor = "gold"
                     document.querySelectorAll('h6')[parseInt(obj.id.substring(8)) - 1].style.backgroundColor = "gold"
+                    
                     if (count < 2) {
                      count++   
                     }else{
@@ -170,7 +172,7 @@ if (obj.children[1].innerText === "") {
                     modalContent.innerHTML = ""
                     modalContent.innerHTML = `
                     <h3>Din egen kuffert indeholdte</h3>
-                    <h4>${money[PlayerSuitcase]}</h4>
+                    <h4>${money[PlayerSuitcase]} Kr</h4>
 <button onclick="location.reload()">Nyt spil?</button>
                     `
                 }
