@@ -1,39 +1,72 @@
 *{
     margin: 0;
     padding: 0;
-}
+    font-family: Arial, Helvetica, sans-serif;
 
+}
 main{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     justify-items: center;
     section{
+        
+        h6{
+            text-align: center;
+        }
+        h2{
+            text-align: center;
+        }
+        p{
+            text-align: center;
+        }
         article{
             background-image: url("../assets/green-suitcase.png");
             background-repeat: no-repeat;
             background-size: contain;
             height: 15vh;
-            width: 10vw;
+            width: 7vw;
             margin: 1vh;
             display: block;
             text-align: center;
+            background-color: black;
+            border-radius: 10px;
             
             
             p{
                 color: white;
                 margin-top: 7vh;
-                margin-right: 2vw;
+               // margin-right: 2vw;
                 
+            }
+            h4{
+                font-size: 20px;
             }
         }
     }
     #MiddleSection{
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        background-color: black;
+        grid-gap: 2vh;
+        margin-left: 10vw;
+        margin-right: 10vw;
+        
+
     }
     #LeftSection{
+        width: 99%;
         h6 {
+            width: 100%;
+           
+            border-top: solid 2px black;
+            font-size: 25px;
+        }
+    }
+    #RightSection{
+        width: 99%;
+        h2 {
+            width: 100%;
+           
+            border-top: solid 2px black;
             font-size: 25px;
         }
     }

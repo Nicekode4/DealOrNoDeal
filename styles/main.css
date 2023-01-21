@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 main {
@@ -8,27 +9,55 @@ main {
   grid-template-columns: repeat(3, 1fr);
   justify-items: center;
 }
+main section h6 {
+  text-align: center;
+}
+main section h2 {
+  text-align: center;
+}
+main section p {
+  text-align: center;
+}
 main section article {
   background-image: url("../assets/green-suitcase.png");
   background-repeat: no-repeat;
   background-size: contain;
   height: 15vh;
-  width: 10vw;
+  width: 7vw;
   margin: 1vh;
   display: block;
   text-align: center;
+  background-color: black;
+  border-radius: 10px;
 }
 main section article p {
   color: white;
   margin-top: 7vh;
-  margin-right: 2vw;
+}
+main section article h4 {
+  font-size: 20px;
 }
 main #MiddleSection {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  background-color: black;
+  grid-gap: 2vh;
+  margin-left: 10vw;
+  margin-right: 10vw;
+}
+main #LeftSection {
+  width: 99%;
 }
 main #LeftSection h6 {
+  width: 100%;
+  border-top: solid 2px black;
+  font-size: 25px;
+}
+main #RightSection {
+  width: 99%;
+}
+main #RightSection h2 {
+  width: 100%;
+  border-top: solid 2px black;
   font-size: 25px;
 }
 
