@@ -4,6 +4,10 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
+html {
+  background-color: rgb(52, 51, 51);
+}
+
 h1 {
   text-align: center;
   height: 5vh;
@@ -11,7 +15,7 @@ h1 {
 
 main {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   justify-items: center;
 }
 main section h6 {
@@ -21,49 +25,63 @@ main section h2 {
   text-align: center;
 }
 main section p {
-  text-align: center;
-}
-main section article {
-  background-image: url("../assets/green-suitcase.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-  height: 15vh;
-  width: 7vw;
-  margin: 1vh;
-  display: block;
-  text-align: center;
-  background-color: black;
-  border-radius: 10px;
-}
-main section article p {
   color: white;
-  margin-top: 7vh;
+  margin-top: 2vh;
 }
-main section article h4 {
+main section h4 {
   font-size: 20px;
 }
-main #MiddleSection {
+
+#MiddleSection {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 2vh;
   margin-left: 10vw;
   margin-right: 10vw;
 }
-main #LeftSection {
+#MiddleSection p {
+  text-align: center;
+}
+#MiddleSection article {
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 5vh;
+  width: 5vw;
+  display: block;
+  text-align: center;
+  background-color: green;
+  border-radius: 50px;
+}
+
+#LeftSection {
+  display: none;
   width: 99%;
 }
-main #LeftSection h6 {
+#LeftSection h6 {
   width: 100%;
   border-top: solid 2px black;
   font-size: 25px;
 }
-main #RightSection {
-  width: 99%;
+
+#RightSection {
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  width: 70%;
+  height: 100%;
 }
-main #RightSection h2 {
+#RightSection p {
+  display: none;
+}
+#RightSection h2 {
   width: 100%;
-  border-top: solid 2px black;
-  font-size: 25px;
+  font-size: 20px;
+}
+
+#BottomSection {
+  margin-top: 5vh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 }
 
 /* The Modal (background) */
