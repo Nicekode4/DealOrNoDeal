@@ -1,3 +1,10 @@
+if('serviceWorker' in navigator) {
+	navigator.serviceWorker.register('./sw.js')
+	.then(reg => console.log('service worker registered', reg))
+	.catch(err => console.error('service worker not registered', err)) 
+}
+
+
 const MiddleSection = document.querySelector('#MiddleSection');
 const LeftSection = document.querySelector('#LeftSection');
 const RightSection = document.querySelector('#RightSection');

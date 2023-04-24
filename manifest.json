@@ -1,0 +1,28 @@
+{
+    "name": "Deal or no deal",
+    "short_name": "Deal or no deal",
+    "description": "A game of dal or no deal",
+    "id": "./index",
+    "icons": [
+        {
+          "src": "favicon.ico",
+          "sizes": "256x256",
+          "type": "image/x-icon"
+        },
+        {
+            "src": "./assets/logo192.png",
+            "type": "image/png",
+            "sizes": "192x192"
+          },
+          {
+            "src": "./assets/logo192.png",
+            "type": "image/png",
+            "sizes": "512x512"
+          }
+      ],
+    "theme_color": "black",
+    "background_color": "black",
+    "display": "standalone",
+    "orientation": "portrait",
+    "start_url": "/index.html"
+  }
