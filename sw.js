@@ -1,8 +1,6 @@
 // Define a cache name
 const CACHE_NAME = 'my-pwa-cache-v6';
 
-const DYNAMIC_CACHE_NAME = 'my-pwa-dynamic-cache-v1';
-
 // List the files you want to cache
 const urlsToCache = [
   '/',
@@ -23,7 +21,7 @@ self.addEventListener('install', event => {
           });
       })
   );
-  console.log('Service Worker has been installed')
+  console.log('Service Worker has been installed..')
 });
 self.addEventListener('activate', event => {
 	console.log('serviceworker has been activated...')
@@ -37,12 +35,12 @@ self.addEventListener('activate', event => {
 	return;
 })
 self.addEventListener('fetch', event => {
-	//console.log(event.request);
+	console.log(event.request);
   if (!(event.request.url.indexOf('http') === 0)) {
    event.respondWith(
     caches.match(event.request).then(cacheRes => {
       return cacheRes || fetch(event.request).then(fetchRes => {
-        return caches.open(DYNAMIC_CACHE_NAME).then(cache => {
+        return caches.open(CACHE_NAME).then(cache => {
           cache.put(event.request.url, fetchRes.clone())
           return fetchRes
         })
